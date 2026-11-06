@@ -2,11 +2,24 @@ class Vector2D{
     //Vectores
     #x
     #y
-    constructor(x, y)
+    constructor(xInit, yInit) //Errores en encapsulamiento, declaracion erronea del constructor, setters y getters.
     {
-        this.#x = x
-        this.#y = y
+        this.x = xInit  
+        this.y = yInit
     }
+    get x(){
+        return this.#x;
+    }
+    get y(){
+        return this.#y;
+    }
+    set x(nuevaX){
+        this.#x=nuevaX;
+    }
+    set y(nuevaY){
+        this.#y=nuevaY;
+    }
+
     mostrar()//Enseña de forma matematica el vector
     {
         const vector_mat = `(${this.x},${this.y})`
@@ -19,13 +32,12 @@ class Vector2D{
     }
 
 }
-const v1 = new Vector2D(3, 2)
+const v1 = new Vector2D(3, 2)  //Instanciacion erronea de metodos
 const v2 = new Vector2D(5, 7)
 
 const suma = ((v1.x + v2.x) + (v1.y + v2.y))
         
-console.log(v1.this.#x)
-console.log(v2.this.#y)
+
 console.log(v1.calcularMagnitud())
 console.log(v2.calcularMagnitud())
 console.log(suma)
